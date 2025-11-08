@@ -22,7 +22,8 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"modid" {
+		// HIER WAR DER FEHLER: "modid" wurde durch die Variable ersetzt
+		project.mod_id {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
@@ -36,7 +37,8 @@ dependencies {
 	mappings loom.officialMojangMappings()
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	// Fabric API. This is technically optional, but you probably want it anyway.
+	// Fabric API.
+	// This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	
 }
